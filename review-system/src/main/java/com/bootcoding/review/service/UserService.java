@@ -12,13 +12,13 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public String createUser(User user){
+    public String createUser(User user) {
         print(user);
         userRepository.save(user);
         return "SUCCESSFULLY USER CREATED!";
     }
 
-    private void print(User user){
+    private void print(User user) {
         System.out.println(user.getUsername());
         System.out.println(user.getEmailId());
         System.out.println(user.getPhone());
@@ -27,6 +27,7 @@ public class UserService {
     public List<User> getAllUsers() {
         return userRepository.getAllUsers();
     }
+
     public User getUserById(int userId) {
         return userRepository.getUserById(userId);
     }
@@ -36,6 +37,6 @@ public class UserService {
     }
 
     public int updateUserById(User user, int userId) {
-        return userRepository.updateUserById(user,userId);
+        return userRepository.updateUserById(user, userId);
     }
 }

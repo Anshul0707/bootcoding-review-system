@@ -24,10 +24,7 @@ public class UserRepository {
 
     public void save(User user) {
         try {
-            String query = "INSERT into review_user(username, emailid, phone)"
-                    + " values ('" + user.getUsername() + "','"
-                    + user.getEmailId() + "',"
-                    + user.getPhone() + ")";
+            String query = "INSERT into review_user(username, emailid, phone)" + " values ('" + user.getUsername() + "','" + user.getEmailId() + "'," + user.getPhone() + ")";
             jdbcTemplate.update(query);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -107,7 +104,7 @@ public class UserRepository {
     public int updateUserById(User user, int id) {
         try {
             String sql = "UPDATE review_user SET username=? ,emailid=? ,phone=? WHERE ID=?";
-            return jdbcTemplate.update(sql, user.getUsername(), user.getEmailId(), user.getPhone(),id);
+            return jdbcTemplate.update(sql, user.getUsername(), user.getEmailId(), user.getPhone(), id);
         } catch (Exception e) {
             e.printStackTrace();
             return -1;

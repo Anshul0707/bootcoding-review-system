@@ -15,12 +15,12 @@ public class UserController {
     UserService userService;
 
     @GetMapping("/health/check")
-    public String healthCheckup(){
+    public String healthCheckup() {
         return "I am alive!";
     }
 
     @PostMapping("/user")
-    public String createUser(@RequestBody User user){
+    public String createUser(@RequestBody User user) {
         // create user
         return userService.createUser(user);
     }
@@ -29,6 +29,7 @@ public class UserController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+
     @GetMapping("/user/{id}")
     public User getUserById(@PathVariable int id) {
         return userService.getUserById(id);
@@ -38,9 +39,9 @@ public class UserController {
     public int deleteUserById(@PathVariable int id) {
         return userService.deleteUserById(id);
     }
-    @PutMapping("/user/{id}")
-    public  int updateUserById(@RequestBody User user,@PathVariable int id){
-        return userService.updateUserById(user,id);
-    }
 
+    @PutMapping("/user/{id}")
+    public int updateUserById(@RequestBody User user, @PathVariable int id) {
+        return userService.updateUserById(user, id);
+    }
 }
