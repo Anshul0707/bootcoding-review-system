@@ -25,6 +25,11 @@ public class UserController {
         return userService.createUser(user);
     }
 
+    @PostMapping("/users")
+    public String createMultipleUser(@RequestBody List<User> users) {
+        return userService.createMultipleUser(users);
+    }
+
     @GetMapping("/user")
     public List<User> getAllUsers() {
         return userService.getAllUsers();

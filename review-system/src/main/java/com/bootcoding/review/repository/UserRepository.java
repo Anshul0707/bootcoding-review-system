@@ -31,26 +31,17 @@ public class UserRepository {
         }
     }
 
-//    public List<User> getAllUsers() {
-//        try {
-//            String sql = "SELECT * FROM review_user";
-////             RowMapper is used to map the ResultSet (result of the query) to User objects.
-//            return jdbcTemplate.query(sql, new RowMapper<User>() {
-//                @Override
-//                public User mapRow(ResultSet rs, int rowNum) throws SQLException {
-//                    User user = new User();
-//                    user.setUsername(rs.getString("username"));
-//                    user.setEmailId(rs.getString("emailid"));
-//                    user.setPhone(rs.getInt("phone"));
-//                    return user;
-//                }
-//            });
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return null;
-//        }
-//    }
+    public void saveMultiple(List<User> userList) {
+        try {
+            for (User user : userList) {
+                String query = "INSERT INTO review_user(username, emailid, phone) VALUES (?, ?, ?)";
+                jdbcTemplate.update(query, user.getUsername(), user.getEmailId(), user.getPhone());
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
+    }
 
     public List<User> getAllUsers() {
         try {
