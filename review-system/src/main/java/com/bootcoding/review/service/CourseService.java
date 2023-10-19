@@ -16,25 +16,4 @@ public class CourseService {
         courseRepository.save(course);
         return "Successfully created course!";
     }
-
-    public String createMultipleCourses(List<Course> courseList) {
-        courseRepository.saveMultiple(courseList);
-        return "Successfully created multiple courses!";
-    }
-
-    public List<Course> getAllCourses() {
-        return courseRepository.getAllCourses();
-    }
-
-    public Course getCourseById(Long courseId) {
-        return courseRepository.getCourseById(courseId);
-    }
-
-    public int deleteCourseById(Long courseId) {
-        return courseRepository.deleteCourseById(courseId);
-    }
-
-    public int updateCourseById(Course course, Long courseId) {
-        return courseRepository.updateCourseById(course, courseId);
-    }
 }
