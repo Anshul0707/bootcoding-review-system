@@ -17,29 +17,4 @@ public class StudentController {
         return studentService.createStudent(student);
     }
 
-    @PostMapping("/students")
-    public String createMultipleStudents(@RequestBody List<Student> students) {
-        return studentService.createMultipleStudents(students);
-    }
-
-    @GetMapping("/students")
-    public List<Student> getAllStudents() {
-        return studentService.getAllStudents();
-    }
-
-    @GetMapping("/student/{id}")
-    public Student getStudentById(@PathVariable Long id) {
-        return studentService.getStudentById(id);
-    }
-
-    @DeleteMapping("/student/{id}")
-    public int deleteStudentById(@PathVariable Long id) {
-        return studentService.deleteStudentById(id);
-    }
-
-    @PutMapping("/student/{id}")
-    public int updateStudentById(@RequestBody Student student, @PathVariable Long id) {
-        return studentService.updateStudentById(student, id);
-    }
-
 }

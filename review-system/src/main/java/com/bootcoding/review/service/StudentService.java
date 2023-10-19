@@ -17,25 +17,4 @@ public class StudentService {
         studentRepository.save(student);
         return "Successfully created student!";
     }
-
-    public String createMultipleStudents(List<Student> studentList) {
-        studentRepository.saveMultiple(studentList);
-        return "Successfully created multiple students!";
-    }
-
-    public List<Student> getAllStudents() {
-        return studentRepository.getAllStudents();
-    }
-
-    public Student getStudentById(Long studentId) {
-        return studentRepository.getStudentById(studentId);
-    }
-
-    public int deleteStudentById(Long studentId) {
-        return studentRepository.deleteStudentById(studentId);
-    }
-
-    public int updateStudentById(Student student, Long studentId) {
-        return studentRepository.updateStudentById(student, studentId);
-    }
 }
